@@ -1,0 +1,1140 @@
+{
+	"info": {
+		"_postman_id": "7ed393f2-e478-47e6-a296-46d1cb99fb91",
+		"name": "credit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3551739"
+	},
+	"item": [
+		{
+			"name": "system-user",
+			"item": [
+				{
+					"name": "create system user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"firstName\":\"joe\",\"lastName\":\"Doe\",\"password\":\"joe12345\",\"email\":\"admin2@test.com\",\"role\":\"MANAGER\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/system-users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"system-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"admin@test.com\",\"password\":\"joe12345\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/system-users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"system-users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhY2NvdW50SWQiOjUsInJvbGUiOiJNQU5BR0VSIiwiYWNjb3VudFR5cGUiOiJBRE1JTklTVFJBVE9SIiwiaXNzIjoiYXV0aCIsImV4cCI6MTc0NzQ0NDkxMCwiaWF0IjoxNzQ3MzU4NTEwfQ.a3kdrr4nmCrfHUOQzarHg2JKc51rrFLHb9VZcPpOdyJK1QVc9DoOWzGA9bSZZgB272dASNV_KwWHCddJwdLCik4C4XC8OvB1b7HRrgrtw9rpFmGrBBYoR1Ys904wuUVx6XbXUL2-0KBa1F1pxXQlA4Gnu-3D6ih46mZ7XSgE8JU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/system-users/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"system-users",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhY2NvdW50SWQiOjUsInJvbGUiOiJNQU5BR0VSIiwiYWNjb3VudFR5cGUiOiJBRE1JTklTVFJBVE9SIiwiaXNzIjoiYXV0aCIsImV4cCI6MTc0NzQ0NDkxMCwiaWF0IjoxNzQ3MzU4NTEwfQ.a3kdrr4nmCrfHUOQzarHg2JKc51rrFLHb9VZcPpOdyJK1QVc9DoOWzGA9bSZZgB272dASNV_KwWHCddJwdLCik4C4XC8OvB1b7HRrgrtw9rpFmGrBBYoR1Ys904wuUVx6XbXUL2-0KBa1F1pxXQlA4Gnu-3D6ih46mZ7XSgE8JU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/system-users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"system-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhY2NvdW50SWQiOjUsInJvbGUiOiJNQU5BR0VSIiwiYWNjb3VudFR5cGUiOiJBRE1JTklTVFJBVE9SIiwiaXNzIjoiYXV0aCIsImV4cCI6MTc0NzQ0NDkxMCwiaWF0IjoxNzQ3MzU4NTEwfQ.a3kdrr4nmCrfHUOQzarHg2JKc51rrFLHb9VZcPpOdyJK1QVc9DoOWzGA9bSZZgB272dASNV_KwWHCddJwdLCik4C4XC8OvB1b7HRrgrtw9rpFmGrBBYoR1Ys904wuUVx6XbXUL2-0KBa1F1pxXQlA4Gnu-3D6ih46mZ7XSgE8JU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"firstName\":\"tom\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/system-users/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"system-users",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "regiser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"firstName\":\"zoe\",\"address\":\"london\",\"nationalId\":\"U124YY\",\"phone\":\"+78172220\",\"lastName\":\"enock\",\"email\":\"zoe22@test.com\",\"password\":\"zoe12345\",\"smeName\":\"Farmyard\",\"smeRegistrationNumber\":\"457B\",\"dateOfBirth\":\"2022-10-10\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/customers/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find by email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/customers/email/zoe@test.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"email",
+								"zoe@test.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"address\":\"uk\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/customers/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loan-applications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/customers/3/loan-applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"3",
+								"loan-applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"zoe@test.com\",\"password\":\"zoe12345\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/customers/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhY2NvdW50SWQiOjMsInJvbGUiOiJDVVNUT01FUiIsImFjY291bnRUeXBlIjoiQ1VTVE9NRVIiLCJpc3MiOiJhdXRoIiwiZXhwIjoxNzQ3NDU1MjA3LCJpYXQiOjE3NDczNjg4MDd9.hM4RJTCmxkQG7VpY6tnd00I8-PNJEAtudlBO3p-_mbZNscErUGVLkTCt00RQwWsDjY8KtxM-AcmLPy_Z9LuHzqeZQc5by63MQ_r3s_awMlviM_r__xBvpxVg7zWIP6h4hHdpKxcNhVuje3zbAneUqfrE1EIFDnUPRIt9KICXN5o",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "credit profile",
+			"item": [
+				{
+					"name": "createOrUpdateCreditProfile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"customerId\":3,\"maxLoanAmount\":250000,\"creditScore\":500,\"currentDebt\":0}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/credit-profiles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"credit-profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCreditProfileByCustomerId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/credit-profiles/customer/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"credit-profiles",
+								"customer",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCreditProfileById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/credit-profiles/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"credit-profiles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assessCreditWorthiness",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/credit-profiles/customer/3/assess",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"credit-profiles",
+								"customer",
+								"3",
+								"assess"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCreditScore",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"newScore\":800}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/credit-profiles/customer/3/score",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"credit-profiles",
+								"customer",
+								"3",
+								"score"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMaxLoanAmount",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"newMaxAmount\":800000}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/credit-profiles/customer/3/max-loan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"credit-profiles",
+								"customer",
+								"3",
+								"max-loan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCurrentDebt",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"newDebtAmount\":0}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/credit-profiles/customer/3/debt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"credit-profiles",
+								"customer",
+								"3",
+								"debt"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhY2NvdW50SWQiOjUsInJvbGUiOiJNQU5BR0VSIiwiYWNjb3VudFR5cGUiOiJBRE1JTklTVFJBVE9SIiwiaXNzIjoiYXV0aCIsImV4cCI6MTc0NzQ0NDkxMCwiaWF0IjoxNzQ3MzU4NTEwfQ.a3kdrr4nmCrfHUOQzarHg2JKc51rrFLHb9VZcPpOdyJK1QVc9DoOWzGA9bSZZgB272dASNV_KwWHCddJwdLCik4C4XC8OvB1b7HRrgrtw9rpFmGrBBYoR1Ys904wuUVx6XbXUL2-0KBa1F1pxXQlA4Gnu-3D6ih46mZ7XSgE8JU",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "loan application",
+			"item": [
+				{
+					"name": "submit loan application",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhY2NvdW50SWQiOjMsInJvbGUiOiJDVVNUT01FUiIsImFjY291bnRUeXBlIjoiQ1VTVE9NRVIiLCJpc3MiOiJhdXRoIiwiZXhwIjoxNzQ3NDU1MjA3LCJpYXQiOjE3NDczNjg4MDd9.hM4RJTCmxkQG7VpY6tnd00I8-PNJEAtudlBO3p-_mbZNscErUGVLkTCt00RQwWsDjY8KtxM-AcmLPy_Z9LuHzqeZQc5by63MQ_r3s_awMlviM_r__xBvpxVg7zWIP6h4hHdpKxcNhVuje3zbAneUqfrE1EIFDnUPRIt9KICXN5o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"customerId\":3,\"amountRequested\":40000,\"purpose\":\"personal\",\"termInMonths\":12}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/loan-applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"loan-applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLoanApplicationById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/loan-applications/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"loan-applications",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLoanApplicationsByStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/loan-applications/status/PENDING",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"loan-applications",
+								"status",
+								"PENDING"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/loan-applications/2/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"loan-applications",
+								"2",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/loan-applications/3/reject",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"loan-applications",
+								"3",
+								"reject"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approve",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/loan-applications/5/approve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"loan-applications",
+								"5",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhY2NvdW50SWQiOjUsInJvbGUiOiJNQU5BR0VSIiwiYWNjb3VudFR5cGUiOiJBRE1JTklTVFJBVE9SIiwiaXNzIjoiYXV0aCIsImV4cCI6MTc0NzQ0NDkxMCwiaWF0IjoxNzQ3MzU4NTEwfQ.a3kdrr4nmCrfHUOQzarHg2JKc51rrFLHb9VZcPpOdyJK1QVc9DoOWzGA9bSZZgB272dASNV_KwWHCddJwdLCik4C4XC8OvB1b7HRrgrtw9rpFmGrBBYoR1Ys904wuUVx6XbXUL2-0KBa1F1pxXQlA4Gnu-3D6ih46mZ7XSgE8JU",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "loans",
+			"item": [
+				{
+					"name": "getLoanById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/loans/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"loans",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLoansByCustomerId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/loans/customer/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"loans",
+								"customer",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLoansByStatus",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/loans/status/ACTIVE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"loans",
+								"status",
+								"ACTIVE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateLoanStatus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"newStatus\":\"PAID_OFF\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/loans/2/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"loans",
+								"2",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOutstandingBalance",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"newBalance\":0}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/loans/2/balance",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"loans",
+								"2",
+								"balance"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhY2NvdW50SWQiOjUsInJvbGUiOiJNQU5BR0VSIiwiYWNjb3VudFR5cGUiOiJBRE1JTklTVFJBVE9SIiwiaXNzIjoiYXV0aCIsImV4cCI6MTc0NzQ0NDkxMCwiaWF0IjoxNzQ3MzU4NTEwfQ.a3kdrr4nmCrfHUOQzarHg2JKc51rrFLHb9VZcPpOdyJK1QVc9DoOWzGA9bSZZgB272dASNV_KwWHCddJwdLCik4C4XC8OvB1b7HRrgrtw9rpFmGrBBYoR1Ys904wuUVx6XbXUL2-0KBa1F1pxXQlA4Gnu-3D6ih46mZ7XSgE8JU",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "loan repayment",
+			"item": [
+				{
+					"name": "recordRepayment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"loanId\":2,\"amountPaid\":20000,\"paymentMethod\":\"BANK\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/api/v1/repayments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"repayments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRepaymentById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/repayments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"repayments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRepaymentsForLoan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/repayments/loan/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"repayments",
+								"loan",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRepaymentsByDateRange",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/api/v1/repayments/date-range?startDate=2025-01-01T00:00:00&endDate=2025-06-01T00:00:00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"api",
+								"v1",
+								"repayments",
+								"date-range"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2025-01-01T00:00:00"
+								},
+								{
+									"key": "endDate",
+									"value": "2025-06-01T00:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhY2NvdW50SWQiOjMsInJvbGUiOiJDVVNUT01FUiIsImFjY291bnRUeXBlIjoiQ1VTVE9NRVIiLCJpc3MiOiJhdXRoIiwiZXhwIjoxNzQ3NDU1MjA3LCJpYXQiOjE3NDczNjg4MDd9.hM4RJTCmxkQG7VpY6tnd00I8-PNJEAtudlBO3p-_mbZNscErUGVLkTCt00RQwWsDjY8KtxM-AcmLPy_Z9LuHzqeZQc5by63MQ_r3s_awMlviM_r__xBvpxVg7zWIP6h4hHdpKxcNhVuje3zbAneUqfrE1EIFDnUPRIt9KICXN5o",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}

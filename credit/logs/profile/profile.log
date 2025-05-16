@@ -1,0 +1,5 @@
+2025-05-16 08:01:20.600 --- http-nio-8085-exec-2 --- org.springframework.web.servlet.DispatcherServlet INFO : Initializing Servlet 'dispatcherServlet'
+2025-05-16 08:01:20.605 --- http-nio-8085-exec-2 --- org.springframework.web.servlet.DispatcherServlet INFO : Completed initialization in 5 ms
+2025-05-16 08:09:09.907 --- SpringApplicationShutdownHook --- org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean INFO : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-16 08:09:09.913 --- SpringApplicationShutdownHook --- com.zaxxer.hikari.HikariDataSource INFO : HikariPool-1 - Shutdown initiated...
+2025-05-16 08:09:09.917 --- SpringApplicationShutdownHook --- com.zaxxer.hikari.HikariDataSource INFO : HikariPool-1 - Shutdown completed.

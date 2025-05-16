@@ -1,0 +1,47 @@
+version: '3.9'
+
+volumes:
+  maven:
+
+networks:
+  credit_network:
+services:
+  java:
+    container_name: credit_java_backend
+    working_dir: /var/app/current
+    environment:
+      - SENSITIVE_KEYS=phone_number,email,emailaddress,password,token,secretkey,apikey,pin,otp,code,cvv,cvv2,pan,swift,iban,routingnumber,sortcode,cardnumber,cardexpiry,expirydate,securitycode,nationalid,nin,transactionid,beneficiaryaccount,transactionpin,transactionpassword,transactioncode,transactionref,transactionreference,authorizationcode,authcode,authref,authreference,paymentid,paymentref,paymentreference,paymentcode,paymenttoken,paymentkey,paymentsecret,paymentsecretkey,paymentsecrettoken,paymentauthorization,paymentauthorizationcode,paymentauthorizationtoken,paymentauthorizationkey,paymentauthorizationsecret,paymentauthorizationsecretkey,paymentauthorizationsecrettoken,paymentsignature,paymentsignaturekey,paymentsignaturetoken,paymentsignaturesecret,paymentsignaturesecretkey,paymentsignaturesecrettoken,pincode
+      - PRIVATE_KEY=file:/var/app/current/private.pem
+      - PUBLIC_KEY=file:/var/app/current/public.pem
+      - JDBC_CONNECTION_URL=jdbc:postgresql://postgres_database:5432/credit?currentSchema=public&user=postgres&password=postgres2025
+
+    volumes:
+      - maven:/root/.m2
+      - /var/app/current
+    depends_on:
+       postgres_database:
+          condition: service_started
+
+    build: ./build/java
+    command: "bash repo.sh"
+    expose:
+      - "5000"
+    ports:
+      - "8085:5000" 
+    networks:
+      - credit_network
+
+  postgres_database:
+    image: postgres:12.19
+    container_name: credit_database
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres2025
+      - POSTGRES_DB=credit
+
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init-db:/docker-entrypoint-initdb.d
+    networks:
+      - credit_network
